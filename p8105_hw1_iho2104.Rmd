@@ -18,7 +18,7 @@ library(ggplot2)
 # The data
 ```{r}
 data("early_january_weather")
-early_january_weather
+view(early_january_weather)
 ```
 # Row, Columns, and Mean of the Data
 
@@ -36,7 +36,7 @@ The mean temperature was
 
 # Scatterplot of time vs temp 
 ```{r}
-ggplot(early_january_weather, aes(x = time_hour, y = temp)) +
-    geom_point()
+ggplot(early_january_weather, 
+       aes(x = time_hour, y = temp)) + geom_point(aes(colour=humid))
 ```
 
