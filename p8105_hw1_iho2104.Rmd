@@ -15,12 +15,16 @@ library(tidyverse)
 library(ggplot2)
 ```
 
-# The data
+# Problem One 
+
+The data
+
 ```{r}
 data("early_january_weather")
 view(early_january_weather)
 ```
-# Row, Columns, and Mean of the Data
+
+Row, Columns, and Mean of the Data
 
 ```{r}
 nrow(early_january_weather)
@@ -36,7 +40,8 @@ The size of the dataset is 358 x 15.
 
 The mean temperature was about 39.58
 
-# Scatterplot of time vs temp 
+Scatterplot of time vs temp 
+
 ```{r}
 ggplot(early_january_weather, 
        aes(x = time_hour, y = temp)) + geom_point(aes(colour=humid))
@@ -44,8 +49,40 @@ ggplot(early_january_weather,
 
 The scatterplot shows the hourly change in temperature, meaning the day-night temp cycle is shown. Temperature rises from Jan 07 to Jan 14, with higher temperature having a higher humidity point.
 
-# Save plot with ggsave
+Save plot with ggsave
 
 ```{r}
 ggsave("early_january_weather.pdf")
 ```
+
+# Problem Two
+
+Random sample of size 10 from a standard normal distribution 
+
+```{r}
+sample = rnorm(1:10)
+view(sample)
+```
+
+Logical vector indicating whether elements of the sample are greater than 0 
+
+```{r}
+any(sample>0)
+```
+
+A character vector of length 10 
+
+```{r}
+sentence = c("Today", "will", "be", "an", "easy","fun", "and", "productive", "Friday", "morning")
+```
+
+A factor vector of length 10, with 3 different factor "levels
+
+```{r}
+coffee = factor(c("iced", "iced", "hot", "frap", "hot", "iced", "hot", "frap", "iced", "iced"),
+                levels = c("iced", "hot", "frap"))
+length(coffee)
+```
+
+
+
